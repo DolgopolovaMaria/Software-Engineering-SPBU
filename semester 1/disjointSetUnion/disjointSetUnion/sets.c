@@ -2,19 +2,27 @@
 #include "sets.h"
 
 
-Sets *createUnionSets()
+Sets *createUnionSets(int numberOfElements)
 {
 	Sets *sets = malloc(sizeof(Sets));
-	for (int i = 0; i < 20; i++)
+	sets->parents = malloc(sizeof(int) * numberOfElements);
+	for (int i = 0; i < numberOfElements; i++)
 	{
 		sets->parents[i] = -1;
 	}
+	sets->numberOfElements = numberOfElements;
 	return sets;
+}
+
+void deleteSets(Sets *sets)
+{
+	free(sets->parents);
+	free(sets);
 }
 
 int makeSet(Sets *sets, int x)
 {
-	if ((x < 0) || (x > 19))
+	if ((x < 0) || (x > sets->numberOfElements))
 	{
 		return -1;
 	}
@@ -33,7 +41,7 @@ int find(Sets *sets, int x)
 
 int findSet(Sets *sets, int x)
 {
-	if ((x < 0) || (x > 19) || (sets->parents[x] == -1))
+	if ((x < 0) || (x > sets->numberOfElements - 1) || (sets->parents[x] == -1))
 	{
 		return -1;
 	}

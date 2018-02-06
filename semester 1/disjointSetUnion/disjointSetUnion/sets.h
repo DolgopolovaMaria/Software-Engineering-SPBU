@@ -2,10 +2,13 @@
 
 typedef struct SETS
 {
-	int parents[20];
+	int *parents;
+	int numberOfElements;
 } Sets;
 
-Sets *createUnionSets();
+Sets *createUnionSets(int numberOfElements);
+
+void deleteSets(Sets *sets);
 
 int makeSet(Sets *sets, int x);
 
