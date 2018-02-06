@@ -11,34 +11,35 @@ typedef struct NODE
 
 typedef struct QUEUE
 {
-	Node nodes[20];
+	Node *nodes;
+	int maxLength;
 	int length;
 }Queue;
 
 
-int parentIndex(int x)
+int parentIndex(Queue *queue, int x)
 {
-	if ((x <= 0) || (x >= 20))
+	if ((x <= 0) || (x >= queue->maxLength))
 	{
 		return -1;
 	}
 	return (x + 1) / 2 - 1;
 }
 
-int leftIndex(int x)
+int leftIndex(Queue *queue, int x)
 {
 	int res = 2 * x + 1;
-	if ((x < 0) || (res >= 20))
+	if ((x < 0) || (res >= queue->maxLength))
 	{
 		return -1;
 	}
 	return res;
 }
 
-int rightIndex(int x)
+int rightIndex(Queue *queue, int x)
 {
 	int res = 2 * x + 2;
-	if ((x < 0) || (res >= 20))
+	if ((x < 0) || (res >= queue->maxLength))
 	{
 		return -1;
 	}
@@ -47,27 +48,30 @@ int rightIndex(int x)
 
 int maxChildIndex(Queue *queue, int x)
 {
-	if ((leftIndex(x) == -1) && (rightIndex(x) == -1))
+	if ((leftIndex(queue, x) == -1) && (rightIndex(queue, x) == -1))
 	{
 		return -1;
 	}
-	if ((leftIndex(x) == -1) || (queue->nodes[rightIndex(x)].priority > queue->nodes[leftIndex(x)].priority))
+	if ((leftIndex(queue, x) == -1) || (queue->nodes[rightIndex(queue, x)].priority > queue->nodes[leftIndex(queue, x)].priority))
 	{
-		return rightIndex(x);
+		return rightIndex(queue, x);
 	}
-	return leftIndex(x);
+	return leftIndex(queue, x);
 }
 
-Queue *createQueue()
+Queue *createQueue(int maxLength)
 {
 	Queue *queue = malloc(sizeof(Queue));
 	queue->length = 0;
+	queue->maxLength = maxLength;
+	queue->nodes = malloc(sizeof(Node) * maxLength);
 
 	return queue;
 }
 
 void deleteQueue(Queue** queue)
 {
+	free((*queue)->nodes);
 	free(*queue);
 }
 
@@ -93,7 +97,7 @@ void swap(Queue *queue, int x, int y)
 
 int insert(Queue *queue, double value, int priority)
 {
-	if (queue->length == 20)
+	if (queue->length == queue->maxLength)
 	{
 		return -1;
 	}
@@ -102,10 +106,10 @@ int insert(Queue *queue, double value, int priority)
 	queue->nodes[queue->length].priority = priority;
 
 	int i = queue->length;
-	while ((i > 0) && (queue->nodes[i].priority > queue->nodes[parentIndex(i)].priority))
+	while ((i > 0) && (queue->nodes[i].priority > queue->nodes[parentIndex(queue, i)].priority))
 	{
-		swap(queue, i, parentIndex(i));
-		i = parentIndex(i);
+		swap(queue, i, parentIndex(queue, i));
+		i = parentIndex(queue, i);
 	}
 	
 	queue->length++;
@@ -114,7 +118,7 @@ int insert(Queue *queue, double value, int priority)
 
 int maxheapify(Queue *queue, int i)
 {
-	if ((i < 0) || (i >= 20))
+	if ((i < 0) || (i >= queue->maxLength))
 	{
 		return -1;
 	}

@@ -4,7 +4,7 @@ typedef struct NODE Node;
 typedef struct QUEUE Queue;
 
 
-Queue *createQueue();
+Queue *createQueue(int maxLength);
 
 void deleteQueue(Queue** queue);
 
