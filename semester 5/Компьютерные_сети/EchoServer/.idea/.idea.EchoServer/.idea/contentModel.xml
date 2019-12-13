@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\pc\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\pc\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_EchoServer.-1200360648.00" t="ExcludeRecursive" />
+    <e p="C:\Users\pc\RiderProjects\EchoServer" t="IncludeFlat">
+      <e p="EchoServer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="EchoServer.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="EchoServer.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

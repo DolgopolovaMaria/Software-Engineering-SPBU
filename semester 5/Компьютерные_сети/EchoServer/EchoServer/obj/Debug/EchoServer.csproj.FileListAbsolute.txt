@@ -1,0 +1,6 @@
+C:\Users\pc\RiderProjects\EchoServer\EchoServer\bin\Debug\EchoServer.exe
+C:\Users\pc\RiderProjects\EchoServer\EchoServer\bin\Debug\EchoServer.pdb
+C:\Users\pc\RiderProjects\EchoServer\EchoServer\obj\Debug\EchoServer.csprojResolveAssemblyReference.cache
+C:\Users\pc\RiderProjects\EchoServer\EchoServer\obj\Debug\EchoServer.csproj.CoreCompileInputs.cache
+C:\Users\pc\RiderProjects\EchoServer\EchoServer\obj\Debug\EchoServer.exe
+C:\Users\pc\RiderProjects\EchoServer\EchoServer\obj\Debug\EchoServer.pdb
