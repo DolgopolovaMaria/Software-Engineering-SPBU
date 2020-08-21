@@ -1,0 +1,57 @@
+file 87051 1590044162                                           
+version 2
+run Iteration-79-20200521-09:56:01-72212
+attr configname Iteration
+attr datetime 20200521-09:56:01
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=9, $j=4, $0=15-(9+4)"
+attr iterationvarsf i=9,j=4,15-(9+4)-
+attr measurement "$i=9, $j=4, $0=15-(9+4)"
+attr network Network
+attr processid 72212
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 79
+attr seedset 79
+itervar i 9
+itervar j 4
+param **.resourcePool.amount 9
+param **.resourcePool1.amount 4
+param **.resourcePool2.amount 15-(9+4)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 9 0 0 0 0 1 0 0 0 0
+1	1862 22262 0 11462 0 276951.133339074617 756 0 8 1280 3746
+2	24124 30001 0 11429 0 276649.425447948022 1017 0 6 1362 3168
+3	54125 26475 52 11445 2443.601032449498 276849.944366602951 610 1238.63035555 5875.8225327311 1965414.2582665 6722509184.6724
+4	80600 6449 249 11323 9139.559602118511 274420.237228255855 148 1313.0874736263 5123.9954039324 469818.22614023 1564460428.5368
+

@@ -1,0 +1,57 @@
+file 86793 1590044194                                           
+version 2
+run Iteration-89-20200521-09:56:34-72548
+attr configname Iteration
+attr datetime 20200521-09:56:34
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=12, $j=2, $0=15-(12+2)"
+attr iterationvarsf i=12,j=2,15-(12+2)-
+attr measurement "$i=12, $j=2, $0=15-(12+2)"
+attr network Network
+attr processid 72548
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 89
+attr seedset 89
+itervar i 12
+itervar j 2
+param **.resourcePool.amount 12
+param **.resourcePool1.amount 2
+param **.resourcePool2.amount 15-(12+2)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1862 9 0 0 0 0 1 0 0 0 0
+1	1871 38590 0 8765 0 277109.205301971001 1245 0 292 185398 35865638
+2	40461 26974 0 8756 0 276781.575781209082 903 0 28 9871 187979
+3	67435 15325 44 8752 1966.824310505433 276624.716187446873 354 1540.8425828442 114866.18066956 21035856.610212 1590168736291.8
+4	82760 4031 64 8740 2589.534984949514 276354.401671394269 93 2340.222020857 114927.32838137 5677560.8948495 443162979940.2
+

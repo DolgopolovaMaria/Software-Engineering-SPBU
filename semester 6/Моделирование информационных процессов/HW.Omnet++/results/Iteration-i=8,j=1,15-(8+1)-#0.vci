@@ -1,0 +1,57 @@
+file 42379 1590044131                                           
+version 2
+run Iteration-70-20200521-09:55:31-68120
+attr configname Iteration
+attr datetime 20200521-09:55:31
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=8, $j=1, $0=15-(8+1)"
+attr iterationvarsf i=8,j=1,15-(8+1)-
+attr measurement "$i=8, $j=1, $0=15-(8+1)"
+attr network Network
+attr processid 68120
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 70
+attr seedset 70
+itervar i 8
+itervar j 1
+param **.resourcePool.amount 8
+param **.resourcePool1.amount 1
+param **.resourcePool2.amount 15-(8+1)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 183 0 5839 0 247112.880888636127 7 0 1 3 3
+1	2036 29865 0 6510 0 277032.826877279916 962 0 475 231981 73848189
+2	31901 9 0 0 0 0 1 0 0 0 0
+3	31910 7957 49 6481 3085.339998785861 276032.703206517278 184 1608.0083979573 187411.73595026 17888144.657475 2292862184440.6
+4	39867 2510 532 6364 20563.143810580011 269999.274897953971 58 14624.244893102 181715.90641127 5143343.1687718 584861396199.61
+

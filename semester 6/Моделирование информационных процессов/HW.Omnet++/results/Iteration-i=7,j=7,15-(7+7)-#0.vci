@@ -1,0 +1,57 @@
+file 64222 1590044125                                           
+version 2
+run Iteration-69-20200521-09:55:25-71616
+attr configname Iteration
+attr datetime 20200521-09:55:25
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=7, $j=7, $0=15-(7+7)"
+attr iterationvarsf i=7,j=7,15-(7+7)-
+attr measurement "$i=7, $j=7, $0=15-(7+7)"
+attr network Network
+attr processid 71616
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 69
+attr seedset 69
+itervar i 7
+itervar j 7
+param **.resourcePool.amount 7
+param **.resourcePool1.amount 7
+param **.resourcePool2.amount 15-(7+7)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 901 0 10259 0 275763.371370782126 31 0 4 33 71
+1	2754 2498 0 10322 0 277012.153436421563 85 0 3 70 102
+2	5252 39088 0 10324 0 277012.153436421563 1256 0 337 218862 49645224
+3	44340 15811 78 10293 2577.789942170691 276393.29091615531 365 2266.4651139546 120771.50657743 23440662.403929 1947099042934.6
+4	60151 4069 127 10242 3399.153651180874 275642.534108082981 94 2698.1855900239 120548.07212693 6206382.5601045 519899130137.66
+

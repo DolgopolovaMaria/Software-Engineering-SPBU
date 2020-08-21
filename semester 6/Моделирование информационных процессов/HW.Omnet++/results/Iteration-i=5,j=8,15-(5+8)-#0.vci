@@ -1,0 +1,57 @@
+file 76655 1590044043                                           
+version 2
+run Iteration-53-20200521-09:54:03-52652
+attr configname Iteration
+attr datetime 20200521-09:54:03
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=5, $j=8, $0=15-(5+8)"
+attr iterationvarsf i=5,j=8,15-(5+8)-
+attr measurement "$i=5, $j=8, $0=15-(5+8)"
+attr network Network
+attr processid 52652
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 53
+attr seedset 53
+itervar i 5
+itervar j 8
+param **.resourcePool.amount 5
+param **.resourcePool1.amount 8
+param **.resourcePool2.amount 15-(5+8)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 7078 0 11235 0 269365.944937589624 241 0 8 550 2332
+1	8931 424 0 7794 0 184967.275791178915 15 0 2 9 11
+2	9355 33895 0 11559 0 277001.577270903211 1145 0 12 3166 15560
+3	43250 6602 41 11512 2951.661287861788 275342.967148295934 152 1749.706837032 7816.9011948531 500293.87841091 1810939487.8299
+4	49852 26801 68 11562 3609.513434499013 277001.577270903211 616 1353.4602236375 7721.3086840828 2107552.2938787 7849029618.2662
+

@@ -1,0 +1,57 @@
+file 92510 1590043933                                           
+version 2
+run Iteration-24-20200521-09:52:13-56864
+attr configname Iteration
+attr datetime 20200521-09:52:13
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=2, $j=12, $0=15-(2+12)"
+attr iterationvarsf i=2,j=12,15-(2+12)-
+attr measurement "$i=2, $j=12, $0=15-(2+12)"
+attr network Network
+attr processid 56864
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 24
+attr seedset 24
+itervar i 2
+itervar j 12
+param **.resourcePool.amount 2
+param **.resourcePool1.amount 12
+param **.resourcePool2.amount 15-(2+12)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1862 40346 0 8247 0 277189.663592890709 1310 0 203 132719 18593051
+1	42208 9 0 0 0 0 1 0 0 0 0
+2	42217 30619 0 8245 0 277051.004744048103 1011 0 100 55153 3697113
+3	72836 15603 46 8242 4241.469421174962 276991.748260029273 361 3061.4549232323 115195.38086688 21072783.364153 1602020166520.9
+4	88439 4069 295 8229 13302.146889504631 276602.555812031643 94 5360.0797372173 115580.9282181 5770072.2943964 467235496682.7
+

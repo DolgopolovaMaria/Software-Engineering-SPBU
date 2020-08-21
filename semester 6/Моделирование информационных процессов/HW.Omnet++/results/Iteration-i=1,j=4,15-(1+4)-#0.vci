@@ -1,0 +1,57 @@
+file 47699 1590043865                                           
+version 2
+run Iteration-3-20200521-09:51:05-70636
+attr configname Iteration
+attr datetime 20200521-09:51:05
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=1, $j=4, $0=15-(1+4)"
+attr iterationvarsf i=1,j=4,15-(1+4)-
+attr measurement "$i=1, $j=4, $0=15-(1+4)"
+attr network Network
+attr processid 70636
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 3
+attr seedset 3
+itervar i 1
+itervar j 4
+param **.resourcePool.amount 1
+param **.resourcePool1.amount 4
+param **.resourcePool2.amount 15-(1+4)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1850 33518 0 5299 0 276948.955010622879 1080 0 507 274888 92763136
+1	35368 9 0 0 0 0 1 0 0 0 0
+2	35377 9 0 0 0 0 1 0 0 0 0
+3	35386 2164 44 5119 3038.340997202663 267823.513501389321 50 2750.2393364813 169863.67736539 5153263.1281465 653229433410.66
+4	37550 10147 85 5288 4761.755887614905 276539.354633111875 235 4279.288866845 174522.631143 21018030.872157 2425455190243
+

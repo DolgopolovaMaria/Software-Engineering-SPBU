@@ -1,0 +1,42 @@
+file 20694 1590036646                                           
+version 2
+run Config1-0-20200521-07:50:45-64884
+attr configname Config1
+attr datetime 20200521-07:50:45
+attr experiment Config1
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 64884
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.resourcePool.amount 1
+param **.resourcePool1.amount 9
+param **.source.interArrivalTime uniform(5s,15s)
+param **.delay.delay uniform(10s,70s)
+param **.delay1.delay uniform(20s,40s)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.source.numJobs 200
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1241 11185 0 1988 0 8128.158974624234 399 0 154 30553 3089967
+1	12426 9 0 0 0 0 1 0 0 0 0
+2	12435 8257 23 2001 91.872592857108 8195.839947564523 200 81.384457834065 6172.5216875202 638462.38749894 2643731875.6203
+

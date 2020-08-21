@@ -1,0 +1,57 @@
+file 48642 1590044019                                           
+version 2
+run Iteration-46-20200521-09:53:39-42264
+attr configname Iteration
+attr datetime 20200521-09:53:39
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=5, $j=1, $0=15-(5+1)"
+attr iterationvarsf i=5,j=1,15-(5+1)-
+attr measurement "$i=5, $j=1, $0=15-(5+1)"
+attr network Network
+attr processid 42264
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 46
+attr seedset 46
+itervar i 5
+itervar j 1
+param **.resourcePool.amount 5
+param **.resourcePool1.amount 1
+param **.resourcePool2.amount 15-(5+1)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 5667 0 6269 0 259298.006812626524 197 0 6 274 790
+1	7520 30641 0 6642 0 276750.236333190579 986 0 500 252235 84747673
+2	38161 9 0 0 0 0 1 0 0 0 0
+3	38170 8388 46 6637 2836.359973439109 276416.207978931371 194 2177.4987082276 198078.86555633 18771894.872986 2466203223400.5
+4	46558 2082 160 6622 7435.192176868301 274959.487182675975 48 5312.9080685396 196624.3933608 4875728.3447212 638637208533.2
+

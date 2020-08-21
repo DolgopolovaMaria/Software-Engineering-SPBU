@@ -1,0 +1,57 @@
+file 72591 1590044058                                           
+version 2
+run Iteration-58-20200521-09:54:18-70312
+attr configname Iteration
+attr datetime 20200521-09:54:18
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=6, $j=4, $0=15-(6+4)"
+attr iterationvarsf i=6,j=4,15-(6+4)-
+attr measurement "$i=6, $j=4, $0=15-(6+4)"
+attr network Network
+attr processid 70312
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 58
+attr seedset 58
+itervar i 6
+itervar j 4
+param **.resourcePool.amount 6
+param **.resourcePool1.amount 4
+param **.resourcePool2.amount 15-(6+4)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 3803 0 11939 0 275319.809540510964 129 0 4 112 188
+1	5656 32162 0 11983 0 276532.487688987371 1085 0 16 4648 34254
+2	37818 69 0 9746 0 223536.896715150576 3 0 1 1 1
+3	37887 6431 56 11950 3071.253825995373 275491.337310919508 148 1437.9546746306 7284.2070226693 522338.25672507 2040516998.3025
+4	44318 28271 71 12005 3630.344593426943 277182.340955958556 650 1351.4048290998 7922.4993611826 2364570.1165322 9616886180.3474
+

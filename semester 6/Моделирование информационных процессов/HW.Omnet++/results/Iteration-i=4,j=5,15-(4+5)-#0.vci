@@ -1,0 +1,57 @@
+file 60379 1590043991                                           
+version 2
+run Iteration-40-20200521-09:53:11-7856
+attr configname Iteration
+attr datetime 20200521-09:53:11
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=4, $j=5, $0=15-(4+5)"
+attr iterationvarsf i=4,j=5,15-(4+5)-
+attr measurement "$i=4, $j=5, $0=15-(4+5)"
+attr network Network
+attr processid 7856
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 40
+attr seedset 40
+itervar i 4
+itervar j 5
+param **.resourcePool.amount 4
+param **.resourcePool1.amount 5
+param **.resourcePool2.amount 15-(4+5)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1851 16417 0 11385 0 276820.199786897088 555 0 10 1357 6173
+1	18268 9241 0 11221 0 273365.345413076661 313 0 6 368 936
+2	27509 9 0 0 0 0 1 0 0 0 0
+3	27518 26510 34 11400 1793.6631531743 277098.287623844225 610 1331.1942366511 6000.2792974651 1827918.4738874 5837352942.1926
+4	54028 6349 67 11351 3061.16768474713 276331.151228970536 147 1348.1542874034 5045.1374045674 448294.10643669 1456350028.3835
+

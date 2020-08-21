@@ -1,0 +1,57 @@
+file 66125 1590044107                                           
+version 2
+run Iteration-66-20200521-09:55:07-53072
+attr configname Iteration
+attr datetime 20200521-09:55:07
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=7, $j=4, $0=15-(7+4)"
+attr iterationvarsf i=7,j=4,15-(7+4)-
+attr measurement "$i=7, $j=4, $0=15-(7+4)"
+attr network Network
+attr processid 53072
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 66
+attr seedset 66
+itervar i 7
+itervar j 4
+param **.resourcePool.amount 7
+param **.resourcePool1.amount 4
+param **.resourcePool2.amount 15-(7+4)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 533 0 8113 0 188534.325082925169 19 0 2 13 17
+1	2386 29356 0 11642 0 274831.481661865849 995 0 15 3527 24313
+2	31742 540 0 9240 0 210796.564547665583 19 0 2 13 17
+3	32282 27325 86 11694 2332.630926837031 276633.76610272712 629 1392.8644370008 7432.6412670077 2140085.0041378 8095086512.5953
+4	59607 6516 103 11668 2533.96517632334 275972.49149416982 150 1550.7715363149 6396.1714416149 494129.73929394 1768716344.439
+

@@ -1,0 +1,57 @@
+file 46680 1590043867                                           
+version 2
+run Iteration-4-20200521-09:51:07-70040
+attr configname Iteration
+attr datetime 20200521-09:51:07
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=1, $j=5, $0=15-(1+5)"
+attr iterationvarsf i=1,j=5,15-(1+5)-
+attr measurement "$i=1, $j=5, $0=15-(1+5)"
+attr network Network
+attr processid 70040
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+itervar i 1
+itervar j 5
+param **.resourcePool.amount 1
+param **.resourcePool1.amount 5
+param **.resourcePool2.amount 15-(1+5)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1850 32406 0 5243 0 276569.034941260136 1045 0 468 246458 77569838
+1	34256 9 0 0 0 0 1 0 0 0 0
+2	34265 9 0 0 0 0 1 0 0 0 0
+3	34274 10319 31 5251 4370.755307151088 277146.926910074536 239 2746.7961999138 175764.11448365 21058344.979109 2551516303612.1
+4	44593 2085 651 5247 32304.426281701857 276685.433527378474 48 19142.349075487 175968.26791824 4538347.2023923 525717478223.8
+

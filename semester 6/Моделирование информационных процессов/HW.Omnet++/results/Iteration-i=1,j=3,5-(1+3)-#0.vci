@@ -1,0 +1,57 @@
+file 55594 1590042758                                           
+version 2
+run Iteration-2-20200521-09:32:38-64816
+attr configname Iteration
+attr datetime 20200521-09:32:38
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=1, $j=3, $0=5-(1+3)"
+attr iterationvarsf i=1,j=3,5-(1+3)-
+attr measurement "$i=1, $j=3, $0=5-(1+3)"
+attr network Network
+attr processid 64816
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 2
+attr seedset 2
+itervar i 1
+itervar j 3
+param **.resourcePool.amount 1
+param **.resourcePool1.amount 3
+param **.resourcePool2.amount 5-(1+3)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1846 35103 0 5417 0 277073.997755123279 1130 0 553 314057 116307529
+1	36949 128 0 4595 0 237859.590444892388 5 0 1 2 2
+2	37077 6135 0 5340 0 272854.969437394038 211 0 3 141 185
+3	43212 10052 55 5421 2792.927042824863 277188.763199468821 233 2586.7579265591 187257.28084964 22685098.481988 2951646698096.8
+4	53264 2328 98 5144 4852.61065214099 263344.14755795312 54 3401.6744092469 179042.01218331 4898128.0275926 559783414311.28
+

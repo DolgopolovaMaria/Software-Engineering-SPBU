@@ -1,0 +1,57 @@
+file 65249 1590044026                                           
+version 2
+run Iteration-47-20200521-09:53:46-38608
+attr configname Iteration
+attr datetime 20200521-09:53:46
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=5, $j=2, $0=15-(5+2)"
+attr iterationvarsf i=5,j=2,15-(5+2)-
+attr measurement "$i=5, $j=2, $0=15-(5+2)"
+attr network Network
+attr processid 38608
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 47
+attr seedset 47
+itervar i 5
+itervar j 2
+param **.resourcePool.amount 5
+param **.resourcePool1.amount 2
+param **.resourcePool2.amount 15-(5+2)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 6208 0 8477 0 273094.84935265896 211 0 6 331 873
+1	8061 36716 0 8587 0 276881.838075074783 1188 0 246 134124 20665986
+2	44777 9 0 0 0 0 1 0 0 0 0
+3	44786 16516 36 8585 3393.254671791757 276450.193264105773 382 1767.1044343617 88066.437893482 16646987.575972 959482740440.67
+4	61302 3945 53 8546 3908.973625327415 275103.993096894997 91 1487.1458951253 87347.979354496 4295587.8526084 259893623775.33
+

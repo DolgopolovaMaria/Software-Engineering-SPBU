@@ -1,0 +1,57 @@
+file 68522 1590044118                                           
+version 2
+run Iteration-68-20200521-09:55:18-61108
+attr configname Iteration
+attr datetime 20200521-09:55:18
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=7, $j=6, $0=15-(7+6)"
+attr iterationvarsf i=7,j=6,15-(7+6)-
+attr measurement "$i=7, $j=6, $0=15-(7+6)"
+attr network Network
+attr processid 61108
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 68
+attr seedset 68
+itervar i 7
+itervar j 6
+param **.resourcePool.amount 7
+param **.resourcePool1.amount 6
+param **.resourcePool2.amount 15-(7+6)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 602 0 10369 0 256917.769548218003 21 0 2 16 22
+1	2455 3737 0 10448 0 258608.759585913897 129 0 4 134 248
+2	6192 30141 0 11061 0 272740.139595336089 1021 0 13 2868 13818
+3	36333 26233 35 11133 1623.010605300083 275616.961459617008 605 1260.931038335 6519.4072479015 2012882.6203048 7198080918.7664
+4	62566 5954 107 11129 4170.002280783973 275141.360643511334 137 1757.2365028225 6093.0845424469 439125.59082644 1493883368.552
+

@@ -1,0 +1,57 @@
+file 81952 1590044105                                           
+version 2
+run Iteration-65-20200521-09:55:04-71620
+attr configname Iteration
+attr datetime 20200521-09:55:04
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=7, $j=3, $0=15-(7+3)"
+attr iterationvarsf i=7,j=3,15-(7+3)-
+attr measurement "$i=7, $j=3, $0=15-(7+3)"
+attr network Network
+attr processid 71620
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 65
+attr seedset 65
+itervar i 7
+itervar j 3
+param **.resourcePool.amount 7
+param **.resourcePool1.amount 3
+param **.resourcePool2.amount 15-(7+3)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 1265 0 10054 0 243605.217447720308 43 0 4 61 141
+1	3118 46764 0 11456 0 277180.998548336562 1534 0 75 70629 3798707
+2	49882 9 0 0 0 0 1 0 0 0 0
+3	49891 6993 54 11442 2101.652422575364 276730.991364134559 161 2012.8311536461 32030.593369343 3159188.4440115 71553448961.959
+4	56884 25066 103 11438 3531.671239776537 276719.370050529049 577 2588.7260127626 32342.29651134 11005623.822361 242027294538.57
+

@@ -1,0 +1,57 @@
+file 97957 1590043939                                           
+version 2
+run Iteration-26-20200521-09:52:19-65392
+attr configname Iteration
+attr datetime 20200521-09:52:19
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=3, $j=2, $0=15-(3+2)"
+attr iterationvarsf i=3,j=2,15-(3+2)-
+attr measurement "$i=3, $j=2, $0=15-(3+2)"
+attr network Network
+attr processid 65392
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 26
+attr seedset 26
+itervar i 3
+itervar j 2
+param **.resourcePool.amount 3
+param **.resourcePool1.amount 2
+param **.resourcePool2.amount 15-(3+2)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 35830 0 9035 0 277068.023792956586 1211 0 16 6399 57193
+1	37683 38929 0 9040 0 277158.316501409432 1256 0 269 172846 31280000
+2	76612 9 0 0 0 0 1 0 0 0 0
+3	76621 17362 52 9020 2520.644290287472 276404.676308993694 401 1774.315516453 103061.73098321 22337522.66646 1602609295161.2
+4	93983 3972 251 8825 8983.333226657364 270796.773176426916 92 5658.9052030455 101658.45572471 4448327.5386401 298715792229.47
+

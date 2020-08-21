@@ -1,0 +1,57 @@
+file 53679 1590043996                                           
+version 2
+run Iteration-42-20200521-09:53:16-69564
+attr configname Iteration
+attr datetime 20200521-09:53:16
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=4, $j=7, $0=15-(4+7)"
+attr iterationvarsf i=4,j=7,15-(4+7)-
+attr measurement "$i=4, $j=7, $0=15-(4+7)"
+attr network Network
+attr processid 69564
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 42
+attr seedset 42
+itervar i 4
+itervar j 7
+param **.resourcePool.amount 4
+param **.resourcePool1.amount 7
+param **.resourcePool2.amount 15-(4+7)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 15175 0 11307 0 277183.611199720591 516 0 5 748 1782
+1	17028 538 0 9423 0 232061.960161712164 19 0 2 11 13
+2	17566 3597 0 11227 0 275401.460981227346 123 0 3 89 121
+3	21163 5944 75 11257 3118.152388969273 275939.120825331547 137 1495.1369314541 4109.9961441649 376563.19207401 1080686726.8872
+4	27107 26570 79 11294 3245.777148000172 276930.961763520826 612 1255.0419092271 4867.7677463371 1736051.3573943 5182984532.8593
+

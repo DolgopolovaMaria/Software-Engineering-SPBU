@@ -1,0 +1,57 @@
+file 67334 1590044143                                           
+version 2
+run Iteration-73-20200521-09:55:43-72104
+attr configname Iteration
+attr datetime 20200521-09:55:43
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=8, $j=4, $0=15-(8+4)"
+attr iterationvarsf i=8,j=4,15-(8+4)-
+attr measurement "$i=8, $j=4, $0=15-(8+4)"
+attr network Network
+attr processid 72104
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 73
+attr seedset 73
+itervar i 8
+itervar j 4
+param **.resourcePool.amount 8
+param **.resourcePool1.amount 4
+param **.resourcePool2.amount 15-(8+4)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 360 0 11183 0 271084.427791971043 13 0 2 10 14
+1	2213 27346 0 11386 0 276982.45844549031 927 0 10 2319 9399
+2	29559 4934 0 10970 0 264830.045592814915 169 0 3 98 116
+3	34493 26409 71 11393 3172.106712267093 277178.28531719193 608 1353.909610156 5765.2426452946 1935952.2382946 6548430157.6624
+4	60902 6430 99 11359 3647.40604193244 276392.580977488186 148 1515.9072999191 5753.3116264376 469728.25017457 1579407658.6194
+

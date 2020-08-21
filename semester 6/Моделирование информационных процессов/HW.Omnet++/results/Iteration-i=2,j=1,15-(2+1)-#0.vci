@@ -1,0 +1,57 @@
+file 79071 1590043895                                           
+version 2
+run Iteration-13-20200521-09:51:35-55824
+attr configname Iteration
+attr datetime 20200521-09:51:35
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=2, $j=1, $0=15-(2+1)"
+attr iterationvarsf i=2,j=1,15-(2+1)-
+attr measurement "$i=2, $j=1, $0=15-(2+1)"
+attr network Network
+attr processid 55824
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 13
+attr seedset 13
+itervar i 2
+itervar j 1
+param **.resourcePool.amount 2
+param **.resourcePool1.amount 1
+param **.resourcePool2.amount 15-(2+1)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 41606 0 6022 0 277117.921111985001 1344 0 209 155142 22988916
+1	43459 25196 0 6024 0 277117.921111985001 814 0 331 132175 28988935
+2	68655 9 0 0 0 0 1 0 0 0 0
+3	68664 8201 36 5991 3474.006922895981 275741.637432639473 190 2932.6611347683 194111.23127557 18343624.543356 2387753089352.7
+4	76865 2204 352 6020 17466.729528483897 276955.848374160924 51 9546.5574045916 194673.52861573 4749294.8906185 584943928973.69
+

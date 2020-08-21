@@ -1,0 +1,57 @@
+file 70747 1590043917                                           
+version 2
+run Iteration-18-20200521-09:51:57-70088
+attr configname Iteration
+attr datetime 20200521-09:51:57
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=2, $j=6, $0=15-(2+6)"
+attr iterationvarsf i=2,j=6,15-(2+6)-
+attr measurement "$i=2, $j=6, $0=15-(2+6)"
+attr network Network
+attr processid 70088
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 18
+attr seedset 18
+itervar i 2
+itervar j 6
+param **.resourcePool.amount 2
+param **.resourcePool1.amount 6
+param **.resourcePool2.amount 15-(2+6)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 43381 0 9310 0 276987.552180162272 1411 0 227 140855 20123749
+1	45234 69 0 6376 0 190307.081370957303 3 0 1 1 1
+2	45303 9 0 0 0 0 1 0 0 0 0
+3	45312 20181 57 9292 3117.748884933618 276290.324695056875 467 2739.4277779944 74487.843449217 15793215.298696 700876619930.2
+4	65493 5252 94 9182 4296.030201714571 272359.408402305668 121 3512.0149287246 72430.149302994 3928561.1954878 157939017043.92
+

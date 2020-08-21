@@ -1,0 +1,57 @@
+file 62334 1590044155                                           
+version 2
+run Iteration-77-20200521-09:55:55-71724
+attr configname Iteration
+attr datetime 20200521-09:55:55
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=9, $j=2, $0=15-(9+2)"
+attr iterationvarsf i=9,j=2,15-(9+2)-
+attr measurement "$i=9, $j=2, $0=15-(9+2)"
+attr network Network
+attr processid 71724
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 77
+attr seedset 77
+itervar i 9
+itervar j 2
+param **.resourcePool.amount 9
+param **.resourcePool1.amount 2
+param **.resourcePool2.amount 15-(9+2)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 9 0 0 0 0 1 0 0 0 0
+1	1862 39583 0 9124 0 277147.382867883801 1277 0 310 192412 38556230
+2	41445 9 0 0 0 0 1 0 0 0 0
+3	41454 17148 52 9106 3052.548734686232 276303.347861786112 396 1963.7521630805 105386.92551003 21428655.519682 1479388170501.7
+4	58602 3730 181 9118 7593.296462018869 276815.957221240652 86 4277.8577307239 105702.86875985 4684866.5357288 319663392873.27
+

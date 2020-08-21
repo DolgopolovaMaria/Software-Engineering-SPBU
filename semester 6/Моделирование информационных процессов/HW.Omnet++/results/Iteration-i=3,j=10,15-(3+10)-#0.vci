@@ -1,0 +1,57 @@
+file 90779 1590043964                                           
+version 2
+run Iteration-34-20200521-09:52:44-69656
+attr configname Iteration
+attr datetime 20200521-09:52:44
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=3, $j=10, $0=15-(3+10)"
+attr iterationvarsf i=3,j=10,15-(3+10)-
+attr measurement "$i=3, $j=10, $0=15-(3+10)"
+attr network Network
+attr processid 69656
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 34
+attr seedset 34
+itervar i 3
+itervar j 10
+param **.resourcePool.amount 3
+param **.resourcePool1.amount 10
+param **.resourcePool2.amount 15-(3+10)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1862 30285 0 10848 0 276417.06223177324 1021 0 13 3264 16738
+1	32147 9 0 0 0 0 1 0 0 0 0
+2	32156 27242 0 10886 0 276978.802182322822 920 0 9 1646 5144
+3	59398 24469 72 10883 2372.548236842919 276954.250781257483 563 1248.2303022221 8013.4110221571 2129584.4891014 8835727123.0841
+4	83867 6910 129 10796 4132.997095101921 275250.157427816498 159 1695.709959073 7186.3624715595 608135.34311751 2503005156.3211
+

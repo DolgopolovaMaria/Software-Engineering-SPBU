@@ -1,0 +1,57 @@
+file 80056 1590044139                                           
+version 2
+run Iteration-72-20200521-09:55:39-71908
+attr configname Iteration
+attr datetime 20200521-09:55:39
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=8, $j=3, $0=15-(8+3)"
+attr iterationvarsf i=8,j=3,15-(8+3)-
+attr measurement "$i=8, $j=3, $0=15-(8+3)"
+attr network Network
+attr processid 71908
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 72
+attr seedset 72
+itervar i 8
+itervar j 3
+param **.resourcePool.amount 8
+param **.resourcePool1.amount 3
+param **.resourcePool2.amount 15-(8+3)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 719 0 11283 0 276255.392378506252 25 0 2 16 20
+1	2572 46468 0 11334 0 277146.33247334257 1524 0 99 70966 4052450
+2	49040 71 0 10229 0 250400.580978708462 3 0 1 1 1
+3	49111 25212 25 11306 2817.082113896245 276505.009123276581 580 1465.9587408788 33208.96998353 10534347.011121 217379693331.83
+4	74323 5731 181 11258 7000.763808687788 275471.519234826966 132 2989.4046944182 32837.104836447 2376955.941586 49052972959.099
+

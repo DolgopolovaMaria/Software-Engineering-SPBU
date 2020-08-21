@@ -1,0 +1,57 @@
+file 73212 1590043910                                           
+version 2
+run Iteration-16-20200521-09:51:50-63112
+attr configname Iteration
+attr datetime 20200521-09:51:50
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=2, $j=4, $0=15-(2+4)"
+attr iterationvarsf i=2,j=4,15-(2+4)-
+attr measurement "$i=2, $j=4, $0=15-(2+4)"
+attr network Network
+attr processid 63112
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 16
+attr seedset 16
+itervar i 2
+itervar j 4
+param **.resourcePool.amount 2
+param **.resourcePool1.amount 4
+param **.resourcePool2.amount 15-(2+4)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 43463 0 9289 0 277090.343867178284 1409 0 230 158326 23969992
+1	45316 2485 0 9160 0 273344.877806897486 85 0 2 54 66
+2	47801 9 0 0 0 0 1 0 0 0 0
+3	47810 20286 73 9285 2880.921026948098 276821.905160929286 469 2494.0839233463 78344.73880527 18652613.239428 967126441225.96
+4	68096 5114 132 9000 4562.521363911409 269142.967422274154 118 3943.8486518845 75694.764886638 4632154.3522464 233027118607.83
+

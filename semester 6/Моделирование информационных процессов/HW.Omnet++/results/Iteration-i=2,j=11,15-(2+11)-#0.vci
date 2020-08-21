@@ -1,0 +1,57 @@
+file 77896 1590043931                                           
+version 2
+run Iteration-23-20200521-09:52:11-58668
+attr configname Iteration
+attr datetime 20200521-09:52:11
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=2, $j=11, $0=15-(2+11)"
+attr iterationvarsf i=2,j=11,15-(2+11)-
+attr measurement "$i=2, $j=11, $0=15-(2+11)"
+attr network Network
+attr processid 58668
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 23
+attr seedset 23
+itervar i 2
+itervar j 11
+param **.resourcePool.amount 2
+param **.resourcePool1.amount 11
+param **.resourcePool2.amount 15-(2+11)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1862 41090 0 9086 0 277119.89728234875 1339 0 170 107963 11531721
+1	42952 9 0 0 0 0 1 0 0 0 0
+2	42961 9774 0 9022 0 274584.196281668307 333 0 4 264 398
+3	52735 20202 53 9068 2906.323621395891 276320.676139409232 466 2644.1156229749 61535.841557914 15334928.455408 634621972791.36
+4	72937 4957 87 9033 4470.85742817496 274949.125819879161 115 3189.0305973182 60607.502974712 3293551.6993861 124029791349.92
+

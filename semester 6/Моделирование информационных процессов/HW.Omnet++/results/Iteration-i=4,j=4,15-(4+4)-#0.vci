@@ -1,0 +1,57 @@
+file 73306 1590043986                                           
+version 2
+run Iteration-39-20200521-09:53:06-69728
+attr configname Iteration
+attr datetime 20200521-09:53:06
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=4, $j=4, $0=15-(4+4)"
+attr iterationvarsf i=4,j=4,15-(4+4)-
+attr measurement "$i=4, $j=4, $0=15-(4+4)"
+attr network Network
+attr processid 69728
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 39
+attr seedset 39
+itervar i 4
+itervar j 4
+param **.resourcePool.amount 4
+param **.resourcePool1.amount 4
+param **.resourcePool2.amount 15-(4+4)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 13717 0 11343 0 276519.457236580699 463 0 6 623 1507
+1	15570 24990 0 11365 0 277149.026911612605 845 0 8 1972 7794
+2	40560 9 0 0 0 0 1 0 0 0 0
+3	40569 26683 68 11352 3172.990193490607 276774.910411324428 614 1265.5037425417 6639.1227265041 1957821.6923585 6655162670.0677
+4	67252 6052 110 11372 4244.130689715689 277198.775795960244 139 1194.088874571 5473.1107418609 438503.17120952 1482727255.7441
+

@@ -1,0 +1,57 @@
+file 74342 1590044001                                           
+version 2
+run Iteration-44-20200521-09:53:21-44224
+attr configname Iteration
+attr datetime 20200521-09:53:21
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=4, $j=9, $0=15-(4+9)"
+attr iterationvarsf i=4,j=9,15-(4+9)-
+attr measurement "$i=4, $j=9, $0=15-(4+9)"
+attr network Network
+attr processid 44224
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 44
+attr seedset 44
+itervar i 4
+itervar j 9
+param **.resourcePool.amount 4
+param **.resourcePool1.amount 9
+param **.resourcePool2.amount 15-(4+9)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 14133 0 10647 0 277060.026487519672 481 0 6 712 1840
+1	15986 308 0 4756 0 119227.184033561365 11 0 3 13 25
+2	16294 27465 0 10642 0 276883.027840991247 931 0 10 2277 9573
+3	43759 24955 49 10645 2281.829242558762 276883.027840991247 575 1300.688896263 7434.609917195 1909370.0975826 6869275562.2573
+4	68714 5626 114 10288 4285.663657086968 267230.433230237662 130 1370.4665661324 6663.8181770135 435228.08794889 1598415392.6949
+

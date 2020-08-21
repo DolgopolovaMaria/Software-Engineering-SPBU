@@ -1,0 +1,57 @@
+file 77428 1590044158                                           
+version 2
+run Iteration-78-20200521-09:55:57-71916
+attr configname Iteration
+attr datetime 20200521-09:55:57
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=9, $j=3, $0=15-(9+3)"
+attr iterationvarsf i=9,j=3,15-(9+3)-
+attr measurement "$i=9, $j=3, $0=15-(9+3)"
+attr network Network
+attr processid 71916
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 78
+attr seedset 78
+itervar i 9
+itervar j 3
+param **.resourcePool.amount 9
+param **.resourcePool1.amount 3
+param **.resourcePool2.amount 15-(9+3)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1853 186 0 5700 0 145091.090917172612 7 0 1 3 3
+1	2039 42558 0 10966 0 277191.337678521043 1399 0 44 31515 903047
+2	44597 1615 0 10311 0 257818.116335516276 55 0 2 35 43
+3	46212 25046 35 10949 2749.706846651432 276648.436624893401 577 1556.3793107076 19411.077459498 6070590.0624708 76751526795.686
+4	71258 6168 146 10919 5863.346894333442 276066.03065759636 142 2063.160590198 20050.345313395 1486137.1612303 18211738451.112
+

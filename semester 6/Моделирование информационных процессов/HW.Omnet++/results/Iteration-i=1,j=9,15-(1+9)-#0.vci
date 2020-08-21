@@ -1,0 +1,57 @@
+file 47362 1590043879                                           
+version 2
+run Iteration-8-20200521-09:51:19-70496
+attr configname Iteration
+attr datetime 20200521-09:51:19
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=1, $j=9, $0=15-(1+9)"
+attr iterationvarsf i=1,j=9,15-(1+9)-
+attr measurement "$i=1, $j=9, $0=15-(1+9)"
+attr network Network
+attr processid 70496
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 8
+attr seedset 8
+itervar i 1
+itervar j 9
+param **.resourcePool.amount 1
+param **.resourcePool1.amount 9
+param **.resourcePool2.amount 15-(1+9)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1850 33528 0 5218 0 277114.114418492991 1080 0 521 290192 103518424
+1	35378 9 0 0 0 0 1 0 0 0 0
+2	35387 9 0 0 0 0 1 0 0 0 0
+3	35396 9630 54 5202 4302.845032351367 275734.78424525477 223 3558.741214117 183431.09156605 20943272.212727 2577048122085.9
+4	45026 2334 111 5123 6906.108317483493 271497.449719362259 54 5327.1931324883 181626.3436922 5551449.8511751 736754056087.84
+

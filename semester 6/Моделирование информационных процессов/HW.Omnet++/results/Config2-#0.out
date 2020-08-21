@@ -1,0 +1,9 @@
+** Event #0   t=0   Elapsed: 1.2e-005s (0m 00s)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 1   present: 1   in FES: 1
+** Event #2001   t=4140.799096566623   Elapsed: 0.003364s (0m 00s)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 201   present: 0   in FES: 0
+
+<!> No more events, simulation completed -- at t=4140.799096566623s, event #2001
+[INFO]	Coders=2, Testers=8, Profit=183464

@@ -1,0 +1,57 @@
+file 45047 1590044179                                           
+version 2
+run Iteration-85-20200521-09:56:18-71932
+attr configname Iteration
+attr datetime 20200521-09:56:18
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=11, $j=1, $0=15-(11+1)"
+attr iterationvarsf i=11,j=1,15-(11+1)-
+attr measurement "$i=11, $j=1, $0=15-(11+1)"
+attr network Network
+attr processid 71932
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 85
+attr seedset 85
+itervar i 11
+itervar j 1
+param **.resourcePool.amount 11
+param **.resourcePool1.amount 1
+param **.resourcePool2.amount 15-(11+1)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1862 9 0 0 0 0 1 0 0 0 0
+1	1871 32612 0 7035 0 276851.625502130381 1049 0 559 292438 109127848
+2	34483 9 0 0 0 0 1 0 0 0 0
+3	34492 8435 37 7021 2474.067789532055 276367.442356219344 195 2125.3832298238 192509.4210719 18988029.851836 2477895085390.1
+4	42927 2118 271 6961 9546.056928682883 273171.333269329569 49 7331.3454157435 190478.60513754 4547979.6182694 568646529586.01
+

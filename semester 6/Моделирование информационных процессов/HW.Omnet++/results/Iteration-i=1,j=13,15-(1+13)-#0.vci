@@ -1,0 +1,57 @@
+file 51192 1590043892                                           
+version 2
+run Iteration-12-20200521-09:51:32-20740
+attr configname Iteration
+attr datetime 20200521-09:51:32
+attr experiment Iteration
+attr inifile omnetpp.ini
+attr iterationvars "$i=1, $j=13, $0=15-(1+13)"
+attr iterationvarsf i=1,j=13,15-(1+13)-
+attr measurement "$i=1, $j=13, $0=15-(1+13)"
+attr network Network
+attr processid 20740
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 12
+attr seedset 12
+itervar i 1
+itervar j 13
+param **.resourcePool.amount 1
+param **.resourcePool1.amount 13
+param **.resourcePool2.amount 15-(1+13)
+param **.source.interArrivalTime exponential(6min)
+param **.delay.delay uniform(4min,28min)
+param **.delay1.delay uniform(10min,28min)
+param **.delay2.delay uniform(4min,16min)
+param **.allocate.resourceModuleName "\"Network.resourcePool\""
+param **.allocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.allocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.deallocate.resourceModuleName "\"Network.resourcePool\""
+param **.deallocate1.resourceModuleName "\"Network.resourcePool1\""
+param **.deallocate2.resourceModuleName "\"Network.resourcePool2\""
+param **.router.randomGateIndex "uniform(0, 1) > 0.2 ? 0 : 1"
+
+vector 0 Network.allocate queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 Network.allocate1 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 Network.allocate2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 Network.sinkStat lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+vector 4 Network.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	1862 32426 0 5085 0 277121.042497314587 1045 0 496 264400 87884142
+1	34288 9 0 0 0 0 1 0 0 0 0
+2	34297 5149 0 5043 0 274161.189849743798 177 0 2 104 120
+3	39446 9446 28 5089 2246.140948584461 277185.533438366086 219 2185.8667166345 190354.59689036 20264188.188024 2507168587155.9
+4	48892 2298 504 5052 25863.124713314857 274727.296552391901 53 17081.377102194 188210.84846081 5377501.5900503 698128241601.75
+
